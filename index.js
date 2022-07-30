@@ -3,7 +3,7 @@ const cors = require('cors');
 const db = require('./queries.js')
 
 const app = express();
-const PORT = process.env.PORT || 3200;
+const PORT = process.env.PORT || 80;
 
 app.use(cors());
 
