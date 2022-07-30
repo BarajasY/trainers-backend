@@ -1,19 +1,19 @@
 const express = require('express');
 const cors = require('cors');
-const db = require('./queries.js')
+const db = require('./database.js')
+const router = require('./routes.js');
 
 const app = express();
 const PORT = process.env.PORT || 80;
 
 app.use(cors());
+app.use(express.json());
 
-app.get('/trainers', db.getTrainers)
+app.use('/trainers', router)
 
 app.get('/', (req, res) => {
     res.send('Hola')
 })
-
-app.get('/trainers/:id', db.getTrainerById)
 
 app.listen(PORT, () => {
     console.log("Server running succesfully!")
