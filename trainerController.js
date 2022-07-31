@@ -5,7 +5,6 @@ const getAllTrainers = (request, response) => {
         console.log(process.env.DATABASE_URL)
         if (err) console.log(err)
         response.status(200).json(res.rows);
-        pool.end();
     })
 }
 
