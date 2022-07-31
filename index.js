@@ -1,12 +1,10 @@
 const express = require('express');
-const cors = require('cors');
-const db = require('./database.js')
 const router = require('./routes.js');
-
 const app = express();
-const PORT = process.env.PORT || 80;
+require('dotenv').config();
 
-app.use(cors());
+const PORT = process.env.PORT || 3200;
+
 app.use(express.json());
 
 app.use('/trainers', router)
@@ -16,5 +14,5 @@ app.get('/', (req, res) => {
 })
 
 app.listen(PORT, () => {
-    console.log("Server running succesfully!")
+    console.log(`Server running on ${PORT} succesfully!`)
 })
