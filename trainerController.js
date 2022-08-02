@@ -15,5 +15,4 @@ const getPokemons = (request, response) => {
     })
 }
 
-exports.getAllTrainers = getAllTrainers;
-exports.getPokemons = getPokemons;
+module.exports = { getAllTrainers, getPokemons }
