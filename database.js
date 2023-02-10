@@ -12,9 +12,7 @@ const { Pool } = require('pg');
 
 const pool = new Pool({
     connectionString: connString,
-    ssl: {
-        rejectUnauthorized: false,
-    }
+    ssl: false
 });
 
 pool.connect(err => {
